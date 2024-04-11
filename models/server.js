@@ -2,6 +2,7 @@ const http = require('http');
 
 const express = require('express'); // importamos express
 const cors = require('cors'); // importamos cors
+const { socketController } = require('../sockets/controller');
 
 // const fileUpload = require("express-fileupload");
 
@@ -18,6 +19,8 @@ class Server {
 		this.middlewares();
 		// Rutas de mi aplicacion
 		this.routes();
+		// Sockets
+		this.sockets();
 	}
 
 	middlewares() {
@@ -32,6 +35,10 @@ class Server {
 
 	routes() {
 		// this.app.use(this.paths.auth, require('../routes/auth'));
+	}
+
+	sockets() {
+		this.io.on('connection', socketController);
 	}
 
 	listen() {

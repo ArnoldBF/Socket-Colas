@@ -1,5 +1,5 @@
 {
-  "name": "Socket-Colas",
+  "name": "socket-colas",
   "version": "1.0.0",
   "description": "aplicacon con websocket socketio",
   "main": "index.js",
